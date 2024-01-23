@@ -1,0 +1,8 @@
+version: 2
+sources:
+  - name: chicago_crimes
+    database: CHICAGO_CRIMES_DATABASE
+    schema: SOURCE_CRIME_DATA
+    tables:
+      - name: CRIMES
+    
