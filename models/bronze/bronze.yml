@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: bronze_beats
+  - name: bronze_chicago_crimes_arrests
+  - name: bronze_chicago_crimes_crimes
+  - name: bronze_chicago_crimes_gunshots
+  - name: bronze_districts
+  - name: bronze_community_areas
