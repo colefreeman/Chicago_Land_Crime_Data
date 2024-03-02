@@ -67,11 +67,11 @@ WITH
     ),
     unioned_data as (
         SELECT * FROM charge_1_columns
-        UNION 
+        UNION ALL
         SELECT * FROM charge_2_columns
-        UNION
+        UNION ALL
         SELECT * FROM charge_3_columns
-        UNION
+        UNION ALL
         SELECT * FROM charge_4_columns 
     ),
     numbered_data AS (
