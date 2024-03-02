@@ -1,0 +1,11 @@
+version: 2
+sources:
+  - name: seeds
+    schema: "{{target.schema}}_SEED_DATA"
+    tables:
+      - name: beats
+      - name: community_areas
+      - name: districts
+      - name: iucr
+      - name: neighborhoods
+      - name: police_stations
