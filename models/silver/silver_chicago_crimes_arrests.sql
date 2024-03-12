@@ -21,6 +21,7 @@ WITH
             , "CHARGE_1_DESCRIPTION" as charge_description
             , "CHARGE_1_TYPE" as charge_type
             , "CHARGE_1_CLASS" as charge_class
+            , "LOAD_TS_UTC" AS entry_timestamp
         FROM bronze_to_silver_arrests
     ),
         charge_2_columns as (
@@ -35,6 +36,7 @@ WITH
             , "CHARGE_2_DESCRIPTION" as charge_description
             , "CHARGE_2_TYPE" as charge_type
             , "CHARGE_2_CLASS" as charge_class
+            , "LOAD_TS_UTC" AS entry_timestamp
         FROM bronze_to_silver_arrests
     ),
         charge_3_columns as (
@@ -49,6 +51,7 @@ WITH
             , "CHARGE_3_DESCRIPTION" as charge_description
             , "CHARGE_3_TYPE" as charge_type
             , "CHARGE_3_CLASS" as charge_class
+            , "LOAD_TS_UTC" AS entry_timestamp
         FROM bronze_to_silver_arrests
     ),
         charge_4_columns as (
@@ -63,6 +66,7 @@ WITH
             , "CHARGE_4_DESCRIPTION" as charge_description
             , "CHARGE_4_TYPE" as charge_type
             , "CHARGE_4_CLASS" as charge_class
+            , "LOAD_TS_UTC" AS entry_timestamp
         FROM bronze_to_silver_arrests
     ),
     unioned_data as (
