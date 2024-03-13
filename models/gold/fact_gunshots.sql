@@ -1,6 +1,6 @@
 {{ config(
-    materialized='view',
-    schema='SILVER'
+    materialized='table',
+    schema='GOLD'
 ) }}
 
 WITH
