@@ -1,3 +1,4 @@
+
 {{ config(
     materialized='view',
     schema='SILVER'
@@ -13,4 +14,3 @@ FROM {{ ref("bronze_chicago_crimes_crimes") }}
 SELECT
     * EXCLUDE "CRIME_DATE"
 FROM bronze_to_silver_crime_data
-
