@@ -15,12 +15,14 @@ crimes_fact as (
         , "COMMUNITY_AREA"
         , "FBI_CODE"
         , "IUCR"
+        , cases."CASE_NUMBER_ID"
         , type.CRIME_TYPE_ID
         , description.CRIME_DESC_ID
         , dates.DATE_ID
         , hours.hour_id
         , loc.CRIMES_LOC_ID
     FROM {{ ref("silver_chicago_crimes_crimes") }} AS fact
+    JOIN {{ ref("dim_case") }} cases ON fact."CASE_NUMBER" = cases.CASE_NUMBER
     JOIN {{ ref("dim_crime_type") }} type ON fact."CRIME_TYPE" = type.CRIME_TYPE
     JOIN {{ ref("dim_crime_description") }} description ON fact."CRIME_DESCRIPTION" = description.CRIME_DESCRIPTION
     JOIN {{ ref("dim_date") }} dates ON fact."DATE_OF_CRIME" = dates.DATE_DAY
