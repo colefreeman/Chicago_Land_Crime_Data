@@ -1,0 +1,9 @@
+prompt: |-
+  Design a reusable data processing block that trains a machine learning model using pre-processed feature data. The block should perform the following steps:
+
+  1. Select an appropriate machine learning algorithm based on the problem type (classification or regression).
+  2. Conduct hyperparameter tuning using techniques such as grid search or randomized search to optimize model performance.
+  3. Fit the selected model with the best hyperparameters to the input feature data.
+  4. Output the trained model object, ensuring it is compatible with downstream tasks such as evaluation or deployment.
+
+  Ensure the implementation is flexible to accommodate different algorithms and hyperparameter configurations, and that it seamlessly integrates with existing pipeline metadata referencing upstream data transformations. Avoid referencing specific block identifiers or names, and do not include any instructions related to YAML formatting.

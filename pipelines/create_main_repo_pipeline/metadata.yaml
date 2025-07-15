@@ -1,0 +1,141 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file: {}
+    file_source: {}
+  downstream_blocks:
+  - clean_data_409
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: Load Raw Data
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: load_raw_data_409
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file: {}
+    file_source: {}
+  downstream_blocks:
+  - transform_features_409
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: Clean Data
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - load_raw_data_409
+  uuid: clean_data_409
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file: {}
+    file_source: {}
+  downstream_blocks:
+  - train_model_409
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: Transform Features
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - clean_data_409
+  uuid: transform_features_409
+- all_upstream_blocks_executed: false
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - evaluate_model_409
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: yaml
+  name: Train Model
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: ai
+  upstream_blocks:
+  - transform_features_409
+  uuid: train_model_409
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file: {}
+    file_source: {}
+  downstream_blocks:
+  - deploy_model_409
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: Evaluate Model
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: custom
+  upstream_blocks:
+  - train_model_409
+  uuid: evaluate_model_409
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file: {}
+    file_source: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: Deploy Model
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: custom
+  upstream_blocks:
+  - evaluate_model_409
+  uuid: deploy_model_409
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2025-07-15 18:17:39.475606+00:00'
+created_by: freem124
+data_integration: null
+description: The data pipeline is designed to process and transform raw data within
+  the same repository, ensuring seamless integration without creating submodules.
+  it orchestrates data ingestion, cleaning, feature extraction, and loading steps,
+  maintaining a cohesive workflow that supports efficient model training and evaluation.
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: Create Main Repo Pipeline
+notification_config: {}
+overrides: null
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+state_store_config: {}
+tags: []
+type: python
+uuid: create_main_repo_pipeline
+variables_dir: /home/src/mage_data/cole-dbt
+widgets: []
